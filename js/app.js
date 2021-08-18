@@ -17,11 +17,13 @@ document.getElementById('pin-generator').addEventListener('click', function () {
 // Handle keypad
 document.getElementById('keyPad').addEventListener('click', function (event) {
     const CurrentValue = document.getElementById('keyReader').value
-    const newValue = CurrentValue + event.target.innerText
+    if (CurrentValue.length != 4) {
+        const newValue = CurrentValue + event.target.innerText
     if (!isNaN(newValue)) {
         document.getElementById('keyReader').value = newValue
     }
-    else if (event.target.innerText == 'C') {
+    
+    }if (event.target.innerText == 'C') {
         document.getElementById('keyReader').value = ''
     }
 })
